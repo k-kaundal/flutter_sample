@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sample/src/ui/my_home.dart';
+import 'package:flutter_sample/src/ui/auth/login.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -8,8 +8,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: MyHome(),
+      theme: ThemeData(primarySwatch: Colors.blueGrey),
+      home: Login(),
     );
   }
 }
