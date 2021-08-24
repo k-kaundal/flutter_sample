@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sample/src/theme/images.dart';
+import 'package:flutter_sample/src/theme/my_fonts.dart';
 import 'package:flutter_sample/src/ui/about_us.dart';
 import 'package:flutter_sample/src/ui/profile.dart';
 import 'package:flutter_sample/src/ui/settings.dart';
@@ -51,7 +53,10 @@ class _MyHomeState extends State<MyHome> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(title!),
+        title: Text(
+          title!,
+          style: TextStyle(fontFamily: MyFonts.SegoeUIBold),
+        ),
         actions: [
           IconButton(
               onPressed: () {},
@@ -60,7 +65,7 @@ class _MyHomeState extends State<MyHome> with SingleTickerProviderStateMixin {
                 color: Colors.deepOrangeAccent,
               )),
           PopupMenuButton(itemBuilder: (BuildContext context) {
-            return {'Setting', 'Log Out'}.map((e) {
+            return {'Settings', 'Log Out'}.map((e) {
               return PopupMenuItem<String>(value: e, child: Text(e));
             }).toList();
           }),
@@ -72,40 +77,8 @@ class _MyHomeState extends State<MyHome> with SingleTickerProviderStateMixin {
           padding: EdgeInsets.all(0.0),
           child: Column(
             children: [
-              Container(
-                padding: EdgeInsets.zero,
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: NetworkImage(
-                            "https://image.freepik.com/free-photo/hand-painted-watercolor-background-with-sky-clouds-shape_24972-1095.jpg"),
-                        fit: BoxFit.cover)),
-                child: DrawerHeader(
-                  child: Container(
-                    padding: EdgeInsets.all(10.0),
-                    alignment: Alignment.topLeft,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      color: const Color(0xFF0E3311).withOpacity(0.2),
-                    ),
-                    child: Column(children: [
-                      Text(
-                        'Sample App',
-                        style: TextStyle(
-                          fontSize: 35,
-                          color: Colors.deepOrange,
-                          fontStyle: FontStyle.italic,
-                        ),
-                      ),
-                      Text(
-                        'kamlesh6633ak@gmail.com',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontStyle: FontStyle.italic,
-                        ),
-                      ),
-                    ]),
-                  ),
-                ),
+              DrawerHeader(
+                child: Container(child: Image.asset(MyImages.loginImage)),
               ),
               SizedBox(
                 height: 3,
@@ -122,13 +95,13 @@ class _MyHomeState extends State<MyHome> with SingleTickerProviderStateMixin {
                     'Home',
                     style: TextStyle(
                         color: Colors.white,
-                        fontSize: 22,
-                        fontStyle: FontStyle.italic),
+                        fontSize: 20,
+                        fontFamily: MyFonts.SegoeUIBoldItalic),
                   ),
                   leading: Icon(
                     Icons.home,
                     color: Colors.white,
-                    size: 30,
+                    size: 25,
                   ),
                   onTap: () {
                     setState(() {
@@ -154,13 +127,13 @@ class _MyHomeState extends State<MyHome> with SingleTickerProviderStateMixin {
                     'Settings',
                     style: TextStyle(
                         color: Colors.white,
-                        fontSize: 22,
-                        fontStyle: FontStyle.italic),
+                        fontSize: 20,
+                        fontFamily: MyFonts.SegoeUIBoldItalic),
                   ),
                   leading: Icon(
                     Icons.settings,
                     color: Colors.white,
-                    size: 30,
+                    size: 25,
                   ),
                   onTap: () {
                     setState(() {
@@ -186,13 +159,13 @@ class _MyHomeState extends State<MyHome> with SingleTickerProviderStateMixin {
                     'Profile',
                     style: TextStyle(
                         color: Colors.white,
-                        fontSize: 22,
-                        fontStyle: FontStyle.italic),
+                        fontSize: 20,
+                        fontFamily: MyFonts.SegoeUIBoldItalic),
                   ),
                   leading: Icon(
                     Icons.person,
                     color: Colors.white,
-                    size: 30,
+                    size: 25,
                   ),
                   onTap: () {
                     setState(() {
@@ -218,13 +191,13 @@ class _MyHomeState extends State<MyHome> with SingleTickerProviderStateMixin {
                     'About Us',
                     style: TextStyle(
                         color: Colors.white,
-                        fontSize: 22,
-                        fontStyle: FontStyle.italic),
+                        fontSize: 20,
+                        fontFamily: MyFonts.SegoeUIBoldItalic),
                   ),
                   leading: Icon(
                     Icons.info,
                     color: Colors.white,
-                    size: 30,
+                    size: 25,
                   ),
                   onTap: () {
                     setState(() {
