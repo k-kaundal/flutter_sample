@@ -49,6 +49,9 @@ flutter:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/images/
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -61,6 +64,43 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
+  fonts:
+    - family: SegoeUI
+      fonts:
+        - asset: assets/fonts/segoeui.ttf
+    - family: SegoeUIBold
+      fonts:
+        - asset: assets/fonts/segoeuib.ttf
+    - family: SegoeUIItalic
+      fonts:
+        - asset: assets/fonts/segoeuii.ttf
+    - family: SegoeUILight
+      fonts:
+        - asset: assets/fonts/segoeuil.ttf
+    - family: SegoeUISemiLight
+      fonts:
+        - asset: assets/fonts/segoeuisl.ttf
+    - family: SegoeUIBoldItalic
+      fonts:
+        - asset: assets/fonts/segoeuiz.ttf
+    - family: SegoeUIBlack
+      fonts:
+        - asset: assets/fonts/seguibl.ttf
+    - family: SegoeUIBlackItalic
+      fonts:
+        - asset: assets/fonts/seguibli.ttf
+    - family: SegoeUILightItalic
+      fonts:
+        - asset: assets/fonts/seguili.ttf
+    - family: SegoeUISemibold
+      fonts:
+        - asset: assets/fonts/seguisb.ttf
+    - family: SegoeUISemiboldItalic
+      fonts:
+        - asset: assets/fonts/seguisbi.ttf
+    - family: SegoeUISemilightItalic
+      fonts:
+        - asset: assets/fonts/seguisli.ttf
   # fonts:
   #   - family: Schyler
   #     fonts:

@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_sample/src/theme/images.dart';
+import 'package:flutter_sample/src/theme/my_fonts.dart';
+import 'package:flutter_sample/src/ui/auth/forgot.dart';
 import 'package:flutter_sample/src/ui/auth/register.dart';
 import 'package:flutter_sample/src/ui/my_home.dart';
 
@@ -40,8 +43,8 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
             width: size.width * 0.8,
             child: Column(
               children: [
-                Image.network(
-                  'https://alexwebdevelop.com/wp-content/uploads/2019/08/php-login-and-authentication-the-definitive-guide.webp',
+                Image.asset(
+                  MyImages.loginImage,
                   width: size.width * 0.6,
                   height: size.height * 0.3,
                 ),
@@ -88,11 +91,19 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                 ),
                 Padding(
                   padding: EdgeInsets.all(3.0),
-                  child: SizedBox(
-                    width: size.width * 0.8,
-                    child: Text('Forgot Password?',
-                        style: TextStyle(color: Colors.blue),
-                        textAlign: TextAlign.end),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => Forgot()));
+                    },
+                    child: SizedBox(
+                      width: size.width * 0.8,
+                      child: Text('Forgot Password?',
+                          style: TextStyle(
+                              color: Colors.blue,
+                              fontFamily: MyFonts.SegoeUIBoldItalic),
+                          textAlign: TextAlign.end),
+                    ),
                   ),
                 ),
                 Padding(
@@ -101,13 +112,15 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                     style: ElevatedButton.styleFrom(
                         elevation: 5,
                         padding: EdgeInsets.only(
-                            left: size.width * 0.34, right: size.width * 0.34)),
+                            left: size.width * 0.31, right: size.width * 0.31)),
                     onPressed: () {
                       Navigator.of(context).push(
                           MaterialPageRoute(builder: (context) => MyHome()));
                     },
                     child: Text(
                       'Login',
+                      style: TextStyle(
+                          fontSize: 18, fontFamily: MyFonts.SegoeUIBold),
                     ),
                   ),
                 ),
@@ -118,16 +131,14 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                     children: [
                       Text("Dont't have an account? "),
                       InkWell(
-                        onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => Register()));
-                        },
-                        child: Text(
-                          'Sign Up',
-                          style: TextStyle(
-                              color: Colors.blue, fontStyle: FontStyle.italic),
-                        ),
-                      )
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => Register()));
+                          },
+                          child: Text('Sign Up',
+                              style: TextStyle(
+                                  color: Colors.blue,
+                                  fontFamily: MyFonts.SegoeUIBoldItalic)))
                     ],
                   ),
                 )

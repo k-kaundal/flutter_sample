@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sample/src/theme/images.dart';
+import 'package:flutter_sample/src/theme/my_fonts.dart';
 import 'package:flutter_sample/src/ui/auth/login.dart';
 
 import '../my_home.dart';
@@ -40,8 +42,8 @@ class _RegisterState extends State<Register>
             width: size.width * 0.8,
             child: Column(
               children: [
-                Image.network(
-                  'https://www.drupal.org/files/styles/grid-3-2x/public/project-images/reg_confirm_email_with_button_0.png?',
+                Image.asset(
+                  MyImages.registerImage,
                   width: size.width * 0.6,
                   height: size.height * 0.3,
                 ),
@@ -113,13 +115,15 @@ class _RegisterState extends State<Register>
                     style: ElevatedButton.styleFrom(
                         elevation: 5,
                         padding: EdgeInsets.only(
-                            left: size.width * 0.32, right: size.width * 0.32)),
+                            left: size.width * 0.28, right: size.width * 0.28)),
                     onPressed: () {
                       Navigator.of(context).push(
                           MaterialPageRoute(builder: (context) => MyHome()));
                     },
                     child: Text(
                       'Register',
+                      style: TextStyle(
+                          fontSize: 18, fontFamily: MyFonts.SegoeUIBold),
                     ),
                   ),
                 ),
@@ -135,12 +139,10 @@ class _RegisterState extends State<Register>
                               MaterialPageRoute(builder: (context) => Login()));
                         },
                         child: Text(
-                          'Login',
-                          style: TextStyle(
-                            color: Colors.blue,
-                            fontStyle: FontStyle.italic,
-                          ),
-                        ),
+                            'Login',
+                            style: TextStyle(
+                                color: Colors.blue,
+                                fontFamily: MyFonts.SegoeUIBoldItalic)),
                       )
                     ],
                   ),
