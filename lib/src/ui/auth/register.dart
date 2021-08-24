@@ -36,118 +36,125 @@ class _RegisterState extends State<Register>
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Container(
-          child: SizedBox(
-            height: size.height * 0.7,
-            width: size.width * 0.8,
-            child: Column(
-              children: [
-                Image.asset(
-                  MyImages.registerImage,
-                  width: size.width * 0.6,
-                  height: size.height * 0.3,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 20, bottom: 3),
-                  child: Card(
-                    elevation: 3,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10))),
-                    shadowColor: Colors.black54,
-                    child: SizedBox(
-                      height: size.height * 0.05,
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                            border: border,
-                            hintText: 'Enter Name',
-                            labelText: 'Name',
-                            labelStyle: TextStyle(
-                              color: Colors.blue,
-                            )),
+        child: SafeArea(
+          child: SingleChildScrollView(
+            child: Container(
+              child: SizedBox(
+                height: size.height * 0.7,
+                width: size.width * 0.8,
+                child: Column(
+                  children: [
+                    Image.asset(
+                      MyImages.registerImage,
+                      width: size.width * 0.6,
+                      height: size.height * 0.3,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 20, bottom: 3),
+                      child: Card(
+                        elevation: 3,
+                        shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10))),
+                        shadowColor: Colors.black54,
+                        child: SizedBox(
+                          height: size.height * 0.05,
+                          child: TextFormField(
+                            decoration: InputDecoration(
+                                border: border,
+                                hintText: 'Enter Name',
+                                labelText: 'Name',
+                                labelStyle: TextStyle(
+                                  color: Colors.blue,
+                                )),
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 3, bottom: 3),
-                  child: Card(
-                    elevation: 3,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10))),
-                    shadowColor: Colors.black54,
-                    child: SizedBox(
-                      height: size.height * 0.05,
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                            border: border,
-                            hintText: 'Enter Email-ID',
-                            labelText: 'Email-ID',
-                            labelStyle: TextStyle(
-                              color: Colors.blue,
-                            )),
+                    Padding(
+                      padding: EdgeInsets.only(top: 3, bottom: 3),
+                      child: Card(
+                        elevation: 3,
+                        shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10))),
+                        shadowColor: Colors.black54,
+                        child: SizedBox(
+                          height: size.height * 0.05,
+                          child: TextFormField(
+                            decoration: InputDecoration(
+                                border: border,
+                                hintText: 'Enter Email-ID',
+                                labelText: 'Email-ID',
+                                labelStyle: TextStyle(
+                                  color: Colors.blue,
+                                )),
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 3, bottom: 0.8),
-                  child: Card(
-                    elevation: 3,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10))),
-                    child: SizedBox(
-                      height: size.height * 0.05,
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                            hintText: 'Enter Password',
-                            labelText: 'Password',
-                            border: border,
-                            labelStyle: TextStyle(
-                              color: Colors.blue,
-                            )),
+                    Padding(
+                      padding: EdgeInsets.only(top: 3, bottom: 0.8),
+                      child: Card(
+                        elevation: 3,
+                        shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10))),
+                        child: SizedBox(
+                          height: size.height * 0.05,
+                          child: TextFormField(
+                            decoration: InputDecoration(
+                                hintText: 'Enter Password',
+                                labelText: 'Password',
+                                border: border,
+                                labelStyle: TextStyle(
+                                  color: Colors.blue,
+                                )),
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 20),
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        elevation: 5,
-                        padding: EdgeInsets.only(
-                            left: size.width * 0.28, right: size.width * 0.28)),
-                    onPressed: () {
-                      Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context) => MyHome()));
-                    },
-                    child: Text(
-                      'Register',
-                      style: TextStyle(
-                          fontSize: 18, fontFamily: MyFonts.SegoeUIBold),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.all(20),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text("Already have an account? "),
-                      InkWell(
-                        onTap: () {
-                          Navigator.of(context).push(
-                              MaterialPageRoute(builder: (context) => Login()));
+                    Padding(
+                      padding: EdgeInsets.only(top: 20),
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            elevation: 5,
+                            padding: EdgeInsets.only(
+                                left: size.width * 0.28,
+                                right: size.width * 0.28)),
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => MyHome()));
                         },
                         child: Text(
-                            'Login',
-                            style: TextStyle(
-                                color: Colors.blue,
-                                fontFamily: MyFonts.SegoeUIBoldItalic)),
-                      )
-                    ],
-                  ),
-                )
-              ],
+                          'Register',
+                          style: TextStyle(
+                              fontSize: 18, fontFamily: MyFonts.SegoeUIBold),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text("Already have an account? "),
+                          InkWell(
+                            onTap: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => Login()));
+                            },
+                            child: Text('Login',
+                                style: TextStyle(
+                                    color: Colors.blue,
+                                    fontFamily: MyFonts.SegoeUIBoldItalic)),
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
             ),
           ),
         ),

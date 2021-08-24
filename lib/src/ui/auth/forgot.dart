@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sample/src/theme/images.dart';
 import 'package:flutter_sample/src/theme/my_fonts.dart';
-
 class Forgot extends StatefulWidget {
   const Forgot({Key? key}) : super(key: key);
 
@@ -15,7 +14,6 @@ class _ForgotState extends State<Forgot> with SingleTickerProviderStateMixin {
   OutlineInputBorder border = OutlineInputBorder(
     borderRadius: BorderRadius.all(Radius.circular(10)),
   );
-
   @override
   void initState() {
     super.initState();
