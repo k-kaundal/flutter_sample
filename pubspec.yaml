@@ -29,6 +29,30 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   animations: ^2.0.1
+  advance_image_picker: ^0.0.5+3
+  # freemar_image_picker: ^0.0.5+3
+  intl:
+  readmore: ^2.1.0
+  table_calendar: ^3.0.0
+  percent_indicator: ^3.0.1
+  flutter_calendar_carousel: ^2.0.1
+  charts_flutter: ^0.10.0
+  country_code_picker: ^2.0.2
+  flutter_spinkit: ^5.0.0
+  shared_preferences: ^2.0.6
+  flutter_search_bar: ^2.1.0
+  flutter_swiper: ^1.1.6
+  html: ^0.15.0
+  url_launcher: ^6.0.9
+  file_picker: ^3.0.4
+  dio: ^3.0.10
+  path_provider: ^2.0.2
+  downloads_path_provider_28: ^0.1.2
+  permission_handler: ^6.0.0
+  open_file: ^3.2.1
+  flutter_local_notifications: ^5.0.0+4
+  flutter_launcher_icons: ^0.9.1
+
 
 dev_dependencies:
   flutter_test:

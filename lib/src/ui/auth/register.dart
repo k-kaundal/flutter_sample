@@ -3,7 +3,7 @@ import 'package:flutter_sample/src/theme/images.dart';
 import 'package:flutter_sample/src/theme/my_fonts.dart';
 import 'package:flutter_sample/src/ui/auth/login.dart';
 
-import '../my_home.dart';
+import 'add_profile_pic.dart';
 
 class Register extends StatefulWidget {
   const Register({Key? key}) : super(key: key);
@@ -124,7 +124,7 @@ class _RegisterState extends State<Register>
                                 right: size.width * 0.28)),
                         onPressed: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => MyHome()));
+                              builder: (context) => AddProfilePic()));
                         },
                         child: Text(
                           'Register',

@@ -5,8 +5,6 @@ import 'package:flutter_sample/src/ui/about_us.dart';
 import 'package:flutter_sample/src/ui/profile.dart';
 import 'package:flutter_sample/src/ui/settings.dart';
 
-import 'home.dart';
-
 class MyHome extends StatefulWidget {
   const MyHome({Key? key}) : super(key: key);
 
@@ -23,7 +21,7 @@ class _MyHomeState extends State<MyHome> with SingleTickerProviderStateMixin {
   _getScreen(int selectionId) {
     switch (selectionId) {
       case 0:
-        return Home();
+        return MyHome();
       case 1:
         return Settings();
       case 2:
