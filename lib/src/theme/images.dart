@@ -4,4 +4,5 @@ class MyImages {
   static const String forgotImage = "assets/images/forgot.png";
   static const String camera = "assets/images/camera.png";
   static const String image_not_found = "assets/images/image_not_found.png";
+  static const String back = "assets/images/date.jpeg";
 }

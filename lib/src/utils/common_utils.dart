@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:advance_image_picker/models/image_object.dart';
 import 'package:advance_image_picker/widgets/image_picker.dart';
 import 'package:flutter/cupertino.dart';
@@ -47,5 +49,26 @@ class CommonUtils {
 
   static hideProgress(BuildContext context) {
     Navigator.pop(context, false);
+  }
+
+  static showSnackBar(BuildContext context, String message) {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text(message),
+    ));
+  }
+
+  static Future<bool> isConnectedToInternet() async {
+    try {
+      final result = await InternetAddress.lookup('google.com');
+      if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
+        print('connected');
+        return true;
+      } else {
+        return false;
+      }
+    } on SocketException catch (_) {
+      print('not connected');
+      return false;
+    }
   }
 }

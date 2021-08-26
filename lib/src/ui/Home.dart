@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
 
-class AboutUs extends StatefulWidget {
-  const AboutUs({Key? key}) : super(key: key);
+class Home extends StatefulWidget {
+  const Home({Key? key}) : super(key: key);
 
   @override
-  _AboutUsState createState() => _AboutUsState();
+  _HomeState createState() => _HomeState();
 }
 
-class _AboutUsState extends State<AboutUs> with SingleTickerProviderStateMixin {
+class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   late AnimationController _controller;
+  bool selected = true;
 
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(vsync: this);
+    _controller =
+        AnimationController(vsync: this, duration: Duration(seconds: 5))
+          ..repeat();
   }
 
   @override
@@ -26,11 +29,11 @@ class _AboutUsState extends State<AboutUs> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Container(
-        height: size.height,
-        width: size.width,
-        child: Stack(
-          children: [
+      body: SafeArea(
+        child: Container(
+          height: size.height,
+          width: size.width,
+          child: Stack(children: [
             Image.network(
               "https://estilo-tendances.com/wp-content/uploads/2020/01/e883b8ba079d25e01ca78d53fe086687.jpeg",
               fit: BoxFit.cover,
@@ -40,10 +43,12 @@ class _AboutUsState extends State<AboutUs> with SingleTickerProviderStateMixin {
             ),
             Center(
               child: SingleChildScrollView(
-                child: Container(),
+                child: Container(
+                  color: const Color(0xFFEACBCB).withOpacity(0.2),
+                ),
               ),
-            )
-          ],
+            ),
+          ]),
         ),
       ),
     );

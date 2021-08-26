@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
-class AboutUs extends StatefulWidget {
-  const AboutUs({Key? key}) : super(key: key);
+class Notifications extends StatefulWidget {
+  const Notifications({Key? key}) : super(key: key);
 
   @override
-  _AboutUsState createState() => _AboutUsState();
+  _NotificationsState createState() => _NotificationsState();
 }
 
-class _AboutUsState extends State<AboutUs> with SingleTickerProviderStateMixin {
+class _NotificationsState extends State<Notifications>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
 
   @override
@@ -26,6 +27,9 @@ class _AboutUsState extends State<AboutUs> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Notifications'),
+      ),
       body: Container(
         height: size.height,
         width: size.width,

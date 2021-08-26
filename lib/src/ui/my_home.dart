@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sample/src/theme/images.dart';
 import 'package:flutter_sample/src/theme/my_fonts.dart';
 import 'package:flutter_sample/src/ui/about_us.dart';
+import 'package:flutter_sample/src/ui/notification/notifications.dart';
 import 'package:flutter_sample/src/ui/profile.dart';
 import 'package:flutter_sample/src/ui/settings.dart';
+
+import 'Home.dart';
 
 class MyHome extends StatefulWidget {
   const MyHome({Key? key}) : super(key: key);
@@ -21,7 +24,7 @@ class _MyHomeState extends State<MyHome> with SingleTickerProviderStateMixin {
   _getScreen(int selectionId) {
     switch (selectionId) {
       case 0:
-        return MyHome();
+        return Home();
       case 1:
         return Settings();
       case 2:
@@ -56,12 +59,19 @@ class _MyHomeState extends State<MyHome> with SingleTickerProviderStateMixin {
           style: TextStyle(fontFamily: MyFonts.SegoeUIBold),
         ),
         actions: [
-          IconButton(
-              onPressed: () {},
-              icon: Icon(
+          InkWell(
+            onTap: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => Notifications()));
+            },
+            child: Padding(
+              padding: EdgeInsets.only(right: 10, left: 10),
+              child: Icon(
                 Icons.notifications,
-                color: Colors.deepOrangeAccent,
-              )),
+                color: Colors.white,
+              ),
+            ),
+          ),
           PopupMenuButton(itemBuilder: (BuildContext context) {
             return {'Settings', 'Log Out'}.map((e) {
               return PopupMenuItem<String>(value: e, child: Text(e));
